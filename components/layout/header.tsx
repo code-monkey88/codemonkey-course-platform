@@ -1,7 +1,9 @@
+import { Suspense } from 'react'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import { Button } from '@/components/ui/button'
 import { UserMenu } from './user-menu'
+import { SearchBar } from '@/components/search-bar'
 import { Code2, BookOpen, Sparkles } from 'lucide-react'
 
 export async function Header() {
@@ -51,8 +53,13 @@ export async function Header() {
           )}
         </nav>
 
-        {/* Auth Section */}
+        {/* Search + Auth Section */}
         <div className="ml-auto flex items-center gap-3">
+          {/* Search Bar */}
+          <Suspense fallback={null}>
+            <SearchBar className="hidden md:flex" />
+          </Suspense>
+
           {user && profile ? (
             <UserMenu profile={profile} />
           ) : (
@@ -65,6 +72,13 @@ export async function Header() {
             </Button>
           )}
         </div>
+      </div>
+
+      {/* Mobile Search Bar */}
+      <div className="container border-t border-border/40 px-4 py-2 md:hidden">
+        <Suspense fallback={null}>
+          <SearchBar />
+        </Suspense>
       </div>
     </header>
   )

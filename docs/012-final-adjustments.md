@@ -70,12 +70,12 @@
 - [x] TypeScript エラーの解消
 
 ### Vercel デプロイ
-- [ ] Vercel プロジェクト作成
-- [ ] GitHub リポジトリ連携
+- [x] Vercel プロジェクト作成
+- [x] GitHub リポジトリ連携
 - [ ] 環境変数設定
-  - [ ] `NEXT_PUBLIC_SUPABASE_URL`
-  - [ ] `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- [ ] デプロイ実行
+  - [x] `NEXT_PUBLIC_SUPABASE_URL`
+  - [x] `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- [x] デプロイ実行
 - [ ] 本番環境での動作確認
 
 ### Supabase 本番設定
